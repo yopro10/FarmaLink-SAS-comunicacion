@@ -1,0 +1,1049 @@
+html.dark-mode .faq-container {
+  background: transparent;
+}
+/*
+ * ============================================================
+ *  FARMALINK — DARK MODE GLOBAL
+ *  Cubre: Admin, Dashboard, Search, Filtros, Login,
+ *         CategoryView, ProductoDetalle, Features,
+ *         Breadcrumb, Footer y componentes comunes.
+ * ============================================================
+ */
+
+/* ── Variables base ─────────────────────────────────────────── */
+html.dark-mode {
+  --bg:       #111827;
+  --bg-2:     #1f2937;
+  --surface:  #111827;
+  --surface-2:#1f2937;
+  --surface-3:#374151;
+  --text:     #f9fafb;
+  --text-2:   #9ca3af;
+  --text-3:   #6b7280;
+  --border:   #374151;
+  --shadow-xs: 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.5);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.6);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.7);
+  --green-mist:  rgba(102,184,46,0.1);
+  --green-mist2: rgba(102,184,46,0.16);
+  --blue-mist:   rgba(11,125,184,0.12);
+}
+
+/* ── Body / fondo global ────────────────────────────────────── */
+html.dark-mode body {
+  background: #111827;
+  color: #f9fafb;
+}
+
+/* ════════════════════════════════════════════════════════════
+   ADMIN PANEL
+   ════════════════════════════════════════════════════════════ */
+html.dark-mode .admin-wrapper {
+  background: #1f2937;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+html.dark-mode .admin-header {
+  border-bottom-color: #374151;
+}
+
+html.dark-mode .admin-title {
+  color: #f9fafb;
+}
+
+html.dark-mode .admin-subtitle {
+  color: #9ca3af;
+}
+
+html.dark-mode .admin-tab {
+  background: #374151;
+  border-color: #4b5563;
+  color: #9ca3af;
+}
+
+html.dark-mode .admin-tab:hover {
+  background: rgba(11,125,184,0.15);
+  color: #60a5fa;
+  border-color: #60a5fa;
+}
+
+html.dark-mode .admin-filtro {
+  background: #111827;
+  border-color: #374151;
+  color: #f9fafb;
+}
+
+html.dark-mode .admin-filtro:focus {
+  background: #1f2937;
+  border-color: var(--primary);
+}
+
+html.dark-mode .admin-filtro::placeholder {
+  color: #6b7280;
+}
+
+html.dark-mode .admin-table-wrapper {
+  border-color: #374151;
+}
+
+html.dark-mode .admin-table thead {
+  background: #374151;
+}
+
+html.dark-mode .admin-table th {
+  color: #9ca3af;
+  border-bottom-color: #4b5563;
+}
+
+html.dark-mode .admin-table td {
+  color: #d1d5db;
+  border-bottom-color: #374151;
+}
+
+html.dark-mode .admin-table tr:hover td {
+  background: #374151;
+}
+
+html.dark-mode .admin-table tbody tr:nth-child(even) td {
+  background: rgba(55,65,81,0.4);
+}
+
+/* Panel "Editar" — registro/actualización de precios (tab Editar) */
+html.dark-mode .admin-precios-panel {
+  background: #1f2937;
+  border-color: #374151;
+  color-scheme: dark;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+}
+
+html.dark-mode .admin-precios-desc {
+  color: #d1d5db;
+}
+
+html.dark-mode .admin-precios-field label {
+  color: #e5e7eb;
+}
+
+html.dark-mode .admin-precios-field select,
+html.dark-mode .admin-precios-field input {
+  background: #111827;
+  border-color: #4b5563;
+  color: #f9fafb;
+}
+
+html.dark-mode .admin-precios-field select:focus,
+html.dark-mode .admin-precios-field input:focus {
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.22);
+  background: #111827;
+}
+
+html.dark-mode .admin-precios-currency {
+  color: #9ca3af;
+}
+
+html.dark-mode .admin-precios-btn-save:hover {
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+}
+
+html.dark-mode .admin-precios-btn-save:disabled {
+  background: #4b5563;
+  color: #9ca3af;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+html.dark-mode .admin-precios-hint {
+  color: #9ca3af;
+  opacity: 1;
+}
+
+/* Badges de rol */
+html.dark-mode .badge-admin {
+  background: rgba(251,191,36,0.15);
+  color: #fcd34d;
+  border-color: rgba(251,191,36,0.25);
+}
+
+html.dark-mode .badge-farm {
+  background: rgba(16,185,129,0.12);
+  color: #34d399;
+  border-color: rgba(16,185,129,0.22);
+}
+
+html.dark-mode .badge-cliente {
+  background: rgba(99,102,241,0.12);
+  color: #818cf8;
+  border-color: rgba(99,102,241,0.22);
+}
+
+/* Acciones en tabla */
+html.dark-mode .btn-editar,
+html.dark-mode .btn-edit {
+  background: rgba(11,125,184,0.15) !important;
+  border-color: rgba(11,125,184,0.3) !important;
+  color: #60a5fa !important;
+}
+
+html.dark-mode .btn-editar:hover,
+html.dark-mode .btn-edit:hover {
+  background: rgba(11,125,184,0.25) !important;
+}
+
+html.dark-mode .btn-eliminar,
+html.dark-mode .btn-delete {
+  background: rgba(239,68,68,0.12) !important;
+  border-color: rgba(239,68,68,0.25) !important;
+  color: #f87171 !important;
+}
+
+html.dark-mode .btn-eliminar:hover,
+html.dark-mode .btn-delete:hover {
+  background: rgba(239,68,68,0.22) !important;
+}
+
+/* Admin modal / form */
+html.dark-mode .admin-modal-overlay {
+  background: rgba(0,0,0,0.7);
+}
+
+html.dark-mode .admin-modal,
+html.dark-mode .modal-content {
+  background: #1f2937;
+  border-color: #374151;
+  color: #f9fafb;
+}
+
+html.dark-mode .admin-modal h2,
+html.dark-mode .modal-content h2 {
+  color: #f9fafb;
+}
+
+html.dark-mode .admin-form-group label,
+html.dark-mode .form-label {
+  color: #d1d5db;
+}
+
+html.dark-mode .admin-input,
+html.dark-mode .admin-select,
+html.dark-mode .admin-textarea {
+  background: #111827 !important;
+  border-color: #374151 !important;
+  color: #f9fafb !important;
+}
+
+html.dark-mode .admin-input:focus,
+html.dark-mode .admin-select:focus,
+html.dark-mode .admin-textarea:focus {
+  border-color: var(--primary) !important;
+  background: #1f2937 !important;
+}
+
+html.dark-mode .admin-input::placeholder,
+html.dark-mode .admin-textarea::placeholder {
+  color: #6b7280;
+}
+
+/* Modal de AdminMedicamentos/AdminUsuarios (clases reales: modal-overlay/modal-box/...) */
+html.dark-mode .admin-wrapper .modal-overlay {
+  background: rgba(0,0,0,0.72);
+}
+
+html.dark-mode .admin-wrapper .modal-box {
+  background: #1a3a5c;
+  border: 1px solid rgba(74,122,168,0.45);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+html.dark-mode .admin-wrapper .modal-header {
+  border-bottom-color: rgba(255,255,255,0.12);
+}
+
+html.dark-mode .admin-wrapper .modal-header h3 {
+  color: #ffffff;
+}
+
+html.dark-mode .admin-wrapper .modal-close {
+  background: rgba(255,255,255,0.08);
+  color: #c8dff0;
+}
+
+html.dark-mode .admin-wrapper .modal-close:hover {
+  background: rgba(239,68,68,0.22);
+  color: #fca5a5;
+}
+
+html.dark-mode .admin-wrapper .form-group label {
+  color: #c8dff0;
+}
+
+/* Inputs blancos con texto oscuro, como "Mi cuenta" */
+html.dark-mode .admin-wrapper .form-group input,
+html.dark-mode .admin-wrapper .form-group select,
+html.dark-mode .admin-wrapper .form-group textarea {
+  background: #ffffff;
+  border-color: #4a7aa8;
+  color: #1a1a2e;
+}
+
+html.dark-mode .admin-wrapper .form-group input:focus,
+html.dark-mode .admin-wrapper .form-group select:focus,
+html.dark-mode .admin-wrapper .form-group textarea:focus {
+  border-color: #6ab0d8;
+  background: #ffffff;
+}
+
+html.dark-mode .admin-wrapper .form-group input::placeholder,
+html.dark-mode .admin-wrapper .form-group textarea::placeholder {
+  color: #6a8aa8;
+}
+
+html.dark-mode .admin-wrapper .form-group select option {
+  background: #ffffff;
+  color: #1a1a2e;
+}
+
+html.dark-mode .admin-wrapper .modal-footer {
+  border-top-color: rgba(255,255,255,0.12);
+}
+
+html.dark-mode .admin-wrapper .btn-cancelar {
+  border-color: rgba(255,255,255,0.18);
+  color: #c8dff0;
+}
+
+html.dark-mode .admin-wrapper .btn-cancelar:hover {
+  border-color: rgba(255,255,255,0.35);
+  color: #ffffff;
+}
+
+html.dark-mode .admin-wrapper .btn-nuevo,
+html.dark-mode .admin-wrapper .btn-guardar {
+  background: #0B7DB8;
+  box-shadow: 0 6px 18px rgba(11,125,184,0.35);
+}
+
+html.dark-mode .admin-wrapper .btn-nuevo:hover,
+html.dark-mode .admin-wrapper .btn-guardar:hover:not(:disabled) {
+  background: #0969a0;
+}
+
+html.dark-mode .admin-wrapper .form-errors {
+  background: rgba(239,68,68,0.12);
+  border-color: rgba(239,68,68,0.25);
+}
+
+html.dark-mode .admin-wrapper .form-errors p {
+  color: #fca5a5;
+}
+
+html.dark-mode .admin-wrapper .modal-confirm h3 {
+  color: #fcd34d;
+}
+
+html.dark-mode .admin-wrapper .modal-confirm p {
+  color: #c8dff0;
+}
+
+/* Section interna (Usuarios) */
+html.dark-mode .admin-section-title {
+  color: #f9fafb;
+}
+
+html.dark-mode .admin-section-subtitle {
+  color: #9ca3af;
+}
+
+/* Avatar */
+html.dark-mode .user-avatar {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+/* ════════════════════════════════════════════════════════════
+   DASHBOARD
+   ════════════════════════════════════════════════════════════ */
+html.dark-mode .dashboard-header {
+  background: #1f2937;
+}
+
+html.dark-mode .dashboard-title {
+  color: #f9fafb;
+}
+
+html.dark-mode .dashboard-subtitle {
+  color: #9ca3af;
+}
+
+html.dark-mode .stat-card {
+  background: #1f2937;
+  border: 1px solid #374151;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+html.dark-mode .stat-lbl {
+  color: #9ca3af;
+}
+
+html.dark-mode .tabs {
+  background: #374151;
+}
+
+html.dark-mode .tab-btn {
+  color: #9ca3af;
+}
+
+html.dark-mode .tab-btn:hover {
+  background: #4b5563;
+  color: #f9fafb;
+}
+
+html.dark-mode .tab-btn.active {
+  background: #1f2937;
+  color: var(--primary);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+html.dark-mode .tab-count {
+  background: #4b5563;
+  color: #d1d5db;
+}
+
+html.dark-mode .tab-btn.active .tab-count {
+  background: var(--primary);
+  color: white;
+}
+
+html.dark-mode .farmacia-card,
+html.dark-mode .med-card {
+  background: #1f2937;
+  border: 1px solid #374151;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+html.dark-mode .farmacia-name,
+html.dark-mode .med-name {
+  color: #f9fafb;
+}
+
+html.dark-mode .farmacia-address,
+html.dark-mode .farmacia-phone,
+html.dark-mode .med-lab {
+  color: #9ca3af;
+}
+
+html.dark-mode .farmacia-num {
+  background: #374151;
+  color: #9ca3af;
+}
+
+html.dark-mode .med-tag {
+  background: #374151;
+  color: #9ca3af;
+}
+
+html.dark-mode .precios-table {
+  background: #1f2937;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+html.dark-mode .precios-table-header {
+  background: #374151;
+  color: #d1d5db;
+}
+
+html.dark-mode .precio-row {
+  border-bottom-color: #374151;
+  color: #d1d5db;
+}
+
+html.dark-mode .precio-med-name {
+  color: #f9fafb;
+}
+
+html.dark-mode .precio-farmacia,
+html.dark-mode .precio-fecha {
+  color: #9ca3af;
+}
+
+/* ════════════════════════════════════════════════════════════
+   BÚSQUEDA (SearchSection + FiltrosBusqueda)
+   ════════════════════════════════════════════════════════════ */
+html.dark-mode .section-title {
+  color: #f9fafb;
+}
+
+html.dark-mode .section-desc {
+  color: #9ca3af;
+}
+
+html.dark-mode .search-login-notice {
+  background: rgba(245,158,11,0.12);
+  border-color: rgba(245,158,11,0.3);
+  color: #fcd34d;
+}
+
+/* Filtros */
+html.dark-mode .filtros-toggle {
+  background: #1f2937;
+  border-color: #374151;
+  color: #9ca3af;
+}
+
+html.dark-mode .filtros-toggle:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+html.dark-mode .filtros-toggle.activo {
+  background: rgba(102,184,46,0.12);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+html.dark-mode .filtros-panel {
+  background: #1f2937;
+  border-color: #374151;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+html.dark-mode .filtro-grupo label,
+html.dark-mode .filtros-panel label {
+  color: #9ca3af;
+}
+
+html.dark-mode .filtros-panel select,
+html.dark-mode .filtros-panel input {
+  background: #111827;
+  border-color: #374151;
+  color: #f9fafb;
+}
+
+html.dark-mode .filtros-panel select:focus,
+html.dark-mode .filtros-panel input:focus {
+  border-color: var(--primary);
+  background: #1f2937;
+}
+
+/* SearchAutocomplete */
+html.dark-mode .search-autocomplete,
+html.dark-mode .autocomplete-wrapper {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+html.dark-mode .search-input,
+html.dark-mode .autocomplete-input {
+  background: #111827 !important;
+  border-color: #374151 !important;
+  color: #f9fafb !important;
+}
+
+html.dark-mode .search-input::placeholder,
+html.dark-mode .autocomplete-input::placeholder {
+  color: #6b7280;
+}
+
+html.dark-mode .autocomplete-dropdown,
+html.dark-mode .suggestions-list {
+  background: #1f2937;
+  border-color: #374151;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+html.dark-mode .suggestion-item,
+html.dark-mode .autocomplete-item {
+  color: #d1d5db;
+  border-bottom-color: #374151;
+}
+
+html.dark-mode .suggestion-item:hover,
+html.dark-mode .autocomplete-item:hover {
+  background: #374151;
+  color: #f9fafb;
+}
+
+/* ════════════════════════════════════════════════════════════
+   FEATURES STRIP (Inicio)
+   ════════════════════════════════════════════════════════════ */
+html.dark-mode .features-strip {
+  background: #1f2937;
+}
+
+html.dark-mode .feature-item {
+  background: #1f2937;
+  border-color: #374151;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+html.dark-mode .feature-item:hover {
+  border-color: var(--primary);
+}
+
+html.dark-mode .feature-title {
+  color: #f9fafb;
+}
+
+html.dark-mode .feature-desc {
+  color: #9ca3af;
+}
+
+/* ════════════════════════════════════════════════════════════
+   BREADCRUMB
+   ════════════════════════════════════════════════════════════ */
+html.dark-mode .app-breadcrumb {
+  background: #1f2937;
+  border-bottom-color: #374151;
+}
+
+/* ════════════════════════════════════════════════════════════
+   FAQ (Preguntas Frecuentes)
+   ════════════════════════════════════════════════════════════ */
+html.dark-mode .faq-view {
+  background: linear-gradient(180deg, #181f2a 0%, #111827 100%) !important;
+}
+html.dark-mode .faq-container h1 {
+  color: #f9fafb;
+}
+html.dark-mode .faq-kicker {
+  color: #60a5fa;
+  background: #1e293b;
+}
+html.dark-mode .faq-view .faq-item {
+  background: #1f2937 !important;
+  border-color: #374151;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.32);
+}
+html.dark-mode .faq-view .faq-item.open {
+  background: #1f2937 !important;
+  border-color: #60a5fa;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.38);
+}
+html.dark-mode .faq-question {
+  color: #f9fafb;
+}
+html.dark-mode .faq-chevron {
+  color: #60a5fa;
+}
+html.dark-mode .faq-answer-inner {
+  color: #d1d5db;
+}
+html.dark-mode .faq-answer p {
+  color: #9ca3af;
+}
+
+html.dark-mode .app-crumb-btn {
+  color: #60a5fa;
+}
+
+html.dark-mode .app-crumb-btn:hover {
+  background: rgba(96,165,250,0.1);
+}
+
+html.dark-mode .app-crumb-sep {
+  color: #4b5563;
+}
+
+html.dark-mode .app-crumb-current {
+  color: #9ca3af;
+}
+
+/* ════════════════════════════════════════════════════════════
+   LOGIN
+   ════════════════════════════════════════════════════════════ */
+html.dark-mode .login-card {
+  background: #1f2937;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+html.dark-mode .login-card h2 {
+  color: #f9fafb;
+}
+
+html.dark-mode .login-subtitle,
+html.dark-mode .login-footer {
+  color: #9ca3af;
+}
+
+html.dark-mode .form-group label {
+  color: #d1d5db;
+}
+
+html.dark-mode .form-group input {
+  background: #111827;
+  border-color: #374151;
+  color: #f9fafb;
+}
+
+html.dark-mode .form-group input:focus {
+  border-color: var(--primary);
+  background: #1f2937;
+}
+
+html.dark-mode .login-error {
+  background: rgba(239,68,68,0.12);
+  color: #f87171;
+  border: 1px solid rgba(239,68,68,0.25);
+}
+
+html.dark-mode .login-divider::before,
+html.dark-mode .login-divider::after {
+  background: #374151;
+}
+
+html.dark-mode .login-divider span {
+  color: #6b7280;
+}
+
+html.dark-mode .link-btn {
+  color: #60a5fa;
+}
+
+/* ════════════════════════════════════════════════════════════
+   CATEGORY VIEW
+   ════════════════════════════════════════════════════════════ */
+html.dark-mode .catview {
+  background: #111827;
+}
+
+html.dark-mode .catview__filter-group {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+html.dark-mode .catview__filter-title {
+  color: #9ca3af;
+}
+
+html.dark-mode .catview__filter-btn {
+  color: #9ca3af;
+}
+
+html.dark-mode .catview__filter-btn:hover,
+html.dark-mode .catview__filter-btn--active {
+  background: rgba(102,184,46,0.12);
+  color: var(--primary);
+}
+
+html.dark-mode .catview__filter-toggle {
+  background: #1f2937;
+  border-color: #374151;
+  color: #f9fafb;
+}
+
+html.dark-mode .catview__toggle-text {
+  color: #9ca3af;
+}
+
+html.dark-mode .catview__card {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+html.dark-mode .catview__card:hover {
+  border-color: rgba(102,184,46,0.3);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+}
+
+html.dark-mode .catview__card-name {
+  color: #f9fafb;
+}
+
+html.dark-mode .catview__card-lab {
+  color: #9ca3af;
+}
+
+html.dark-mode .catview__card-desc {
+  color: #6b7280;
+}
+
+html.dark-mode .catview__card-footer {
+  background: #111827;
+  border-top-color: #374151;
+}
+
+html.dark-mode .catview__card-badge {
+  background: rgba(16,185,129,0.12);
+  color: #34d399;
+  border-color: rgba(16,185,129,0.2);
+}
+
+html.dark-mode .catview__card--inactive .catview__card-badge {
+  background: rgba(239,68,68,0.12);
+  color: #f87171;
+  border-color: rgba(239,68,68,0.2);
+}
+
+html.dark-mode .catview__empty {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+html.dark-mode .catview__empty h3 {
+  color: #f9fafb;
+}
+
+html.dark-mode .catview__spinner {
+  border-color: #374151;
+  border-top-color: var(--primary);
+}
+
+/* ════════════════════════════════════════════════════════════
+   PRODUCTO DETALLE
+   ════════════════════════════════════════════════════════════ */
+html.dark-mode .pd-view {
+  background: #111827;
+}
+
+html.dark-mode .pd-hero,
+html.dark-mode .pd-chart-section,
+html.dark-mode .pd-map-section,
+html.dark-mode .pd-prices-section {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+html.dark-mode .pd-name    { color: #f9fafb; }
+html.dark-mode .pd-lab     { color: #9ca3af; }
+html.dark-mode .pd-main-price { color: #f9fafb; }
+
+html.dark-mode .pd-specs {
+  background: #111827;
+  border-color: #374151;
+}
+
+html.dark-mode .pd-spec-label { color: #6b7280; }
+html.dark-mode .pd-spec-value { color: #f9fafb; }
+
+/* Pastilla "búsqueda avanzada": el valor hereda texto claro sobre fondo violeta claro — sin contraste */
+html.dark-mode .pd-spec-value.pd-strategy {
+  background: rgba(139, 92, 246, 0.28);
+  color: #ede9fe;
+  border: 1px solid rgba(167, 139, 250, 0.45);
+}
+
+/* "Disponible en N farmacias" seguía en gris oscuro (#374151) sobre card oscura */
+html.dark-mode .pd-availability {
+  color: #cbd5e1;
+}
+html.dark-mode .pd-availability strong {
+  color: #f9fafb;
+}
+
+html.dark-mode .pd-desc-block {
+  background: #111827;
+  border-left-color: var(--primary);
+}
+
+html.dark-mode .pd-desc-block h3 { color: var(--primary); }
+html.dark-mode .pd-desc-block p  { color: #9ca3af; }
+
+html.dark-mode .pd-img-wrap {
+  background: #111827;
+  border-color: #374151;
+}
+
+html.dark-mode .pd-section-header {
+  border-bottom-color: #374151;
+}
+
+html.dark-mode .pd-section-header h2 { color: #f9fafb; }
+html.dark-mode .pd-section-header p  { color: #6b7280; }
+
+html.dark-mode .pd-card {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+html.dark-mode .pd-card:hover {
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+}
+
+html.dark-mode .pd-card--best {
+  background: linear-gradient(135deg, rgba(102,184,46,0.1), rgba(74,138,30,0.08));
+  border-color: rgba(102,184,46,0.25);
+}
+
+html.dark-mode .pd-card--selected {
+  background: linear-gradient(135deg, rgba(11,125,184,0.12), rgba(8,93,138,0.1)) !important;
+  border-color: rgba(11,125,184,0.35) !important;
+}
+
+html.dark-mode .pd-farm-info h4 { color: #f9fafb; }
+html.dark-mode .pd-addr         { color: #9ca3af; }
+html.dark-mode .pd-date         { color: #6b7280; }
+html.dark-mode .pd-price        { color: #f9fafb; }
+
+html.dark-mode .pd-farm-avatar {
+  background: #111827;
+  border-color: #374151;
+  color: #9ca3af;
+}
+
+html.dark-mode .pd-prices-hd {
+  border-bottom-color: #374151;
+}
+
+html.dark-mode .pd-prices-hd h2 { color: #f9fafb; }
+
+html.dark-mode .pd-sort-btn {
+  background: #374151;
+  border-color: #4b5563;
+  color: #9ca3af;
+}
+
+html.dark-mode .pd-sort-btn:hover {
+  background: rgba(11,125,184,0.15);
+  color: #60a5fa;
+  border-color: rgba(11,125,184,0.3);
+}
+
+html.dark-mode .pd-empty p { color: #d1d5db; }
+html.dark-mode .pd-empty small { color: #6b7280; }
+
+html.dark-mode .pd-action-btn.pd-chart-btn {
+  background: #374151;
+  color: #9ca3af;
+  border-color: #4b5563;
+}
+
+html.dark-mode .pd-skel {
+  background: linear-gradient(90deg, #1f2937 25%, #374151 50%, #1f2937 75%);
+  background-size: 200% 100%;
+}
+
+/* Historial */
+html.dark-mode .history-toolbar {
+  border-bottom-color: #374151;
+}
+
+html.dark-mode .history-toolbar-title { color: #9ca3af; }
+
+html.dark-mode .history-time-btn {
+  border-color: #374151;
+  color: #9ca3af;
+  background: transparent;
+}
+
+html.dark-mode .history-time-btn:hover {
+  background: #374151;
+  color: #d1d5db;
+}
+
+html.dark-mode .history-stat {
+  background: #1f2937;
+}
+
+html.dark-mode .history-stat__label { color: #6b7280; }
+html.dark-mode .history-stat__value { color: #f9fafb; }
+
+html.dark-mode .history-leg-name { color: #9ca3af; }
+
+html.dark-mode .history-leg-item:hover {
+  background: #374151;
+}
+
+/* Gráfico SVG — ejes y textos */
+html.dark-mode .price-chart text,
+html.dark-mode .history-chart text {
+  fill: #6b7280;
+}
+
+html.dark-mode .chart-summary {
+  background: #111827;
+  border-color: #374151;
+}
+
+html.dark-mode .chart-stat span  { color: #6b7280; }
+html.dark-mode .chart-stat strong { color: #f9fafb; }
+
+html.dark-mode .chart-legend {
+  border-top-color: #374151;
+}
+
+html.dark-mode .chart-leg { color: #9ca3af; }
+
+/* ════════════════════════════════════════════════════════════
+   MAPA / MAP VIEW
+   ════════════════════════════════════════════════════════════ */
+html.dark-mode .map-container,
+html.dark-mode .mapview-wrapper {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+/* ════════════════════════════════════════════════════════════
+   TOAST / NOTIFICACIONES
+   ════════════════════════════════════════════════════════════ */
+html.dark-mode .toast {
+  background: #ffffff !important;
+  color: #1a1a1a !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
+
+/* ════════════════════════════════════════════════════════════
+   ELEMENTOS HTML NATIVOS
+   ════════════════════════════════════════════════════════════ */
+
+/* Inputs, selects y textareas globales */
+html.dark-mode input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+html.dark-mode select,
+html.dark-mode textarea {
+  background: #111827;
+  border-color: #374151;
+  color: #f9fafb;
+}
+
+html.dark-mode input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):focus,
+html.dark-mode select:focus,
+html.dark-mode textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+html.dark-mode input::placeholder,
+html.dark-mode textarea::placeholder {
+  color: #6b7280;
+}
+
+/* Tablas genéricas */
+html.dark-mode table {
+  color: #d1d5db;
+}
+
+html.dark-mode th {
+  color: #9ca3af;
+  border-color: #374151;
+}
+
+html.dark-mode td {
+  border-color: #374151;
+}
+
+/* Scrollbar en dark mode */
+html.dark-mode ::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+html.dark-mode ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--primary), var(--secondary));
+}
+
+/* ════════════════════════════════════════════════════════════
+   FOOTER EN DARK MODE (ya es oscuro, ajustes menores)
+   ════════════════════════════════════════════════════════════ */
+html.dark-mode .footer-logo-img {
+  filter: brightness(0) invert(1);
+}
+
+/* ════════════════════════════════════════════════════════════
+   PROTECTED ROUTE / LOADING
+   ════════════════════════════════════════════════════════════ */
+html.dark-mode .state-loading p { color: #9ca3af; }
+html.dark-mode .loading-ring {
+  border-color: #374151;
+  border-top-color: var(--primary);
+}
+
+html.dark-mode .state-error h3 { color: #f87171; }
+html.dark-mode .state-error p  { color: #9ca3af; }

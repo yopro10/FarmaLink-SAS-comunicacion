@@ -1,0 +1,105 @@
+/* ============================================================
+   MAP VIEW - STANDALONE MAP PAGE
+   ============================================================ */
+
+.map-view {
+  background: var(--bg-2, #f8f9fa);
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+/* Hero header */
+.map-view-hero {
+  background: linear-gradient(135deg, #0a5b8a 0%, #0B7DB8 60%, #1a9fd4 100%);
+  padding: 40px 0 36px;
+  color: white;
+}
+
+.map-view-hero-content {
+  margin-bottom: 24px;
+}
+
+.map-view-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 14px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  margin-bottom: 14px;
+}
+
+.map-view-hero h1 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0 0 10px;
+  color: white;
+}
+
+.map-view-hero p {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.85;
+  max-width: 540px;
+  line-height: 1.6;
+}
+
+/* Feature pills row */
+.map-feature-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.map-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: white;
+  backdrop-filter: blur(4px);
+  transition: all 0.2s;
+}
+
+.map-pill:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Map body */
+.map-view-body {
+  padding-top: 32px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .map-view-hero {
+    padding: 28px 0 24px;
+  }
+
+  .map-view-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .map-feature-pills {
+    gap: 8px;
+  }
+
+  .map-pill {
+    font-size: 0.78rem;
+    padding: 5px 12px;
+  }
+}

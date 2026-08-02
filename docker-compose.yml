@@ -1,0 +1,65 @@
+version: "3.9"
+
+services:
+
+  mongo:
+    image: mongo:6
+    container_name: farmalink-mongo
+    restart: always
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - farmalink-network
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    container_name: farmalink-backend
+    restart: always
+    ports:
+      - "4000:4000"
+    environment:
+      - PORT=4000
+      - MONGODB_URI=mongodb://mongo:27017/farmalink
+    depends_on:
+      - mongo
+    networks:
+      - farmalink-network
+
+  gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile.gateway
+    container_name: farmalink-gateway
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - BACKEND_URL=http://backend:4000
+    depends_on:
+      - backend
+    networks:
+      - farmalink-network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: farmalink-frontend
+    restart: always
+    ports:
+      - "8080:80"
+    depends_on:
+      - gateway
+    networks:
+      - farmalink-network
+
+volumes:
+  mongo_data:
+
+networks:
+  farmalink-network:
+    driver: bridge

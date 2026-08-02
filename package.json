@@ -1,0 +1,16 @@
+{
+  "name": "farmalink-sas",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:gateway\" \"npm run dev:frontend\"",
+    "dev:backend": "npm run dev --prefix packages/backend",
+    "dev:gateway": "npm run dev --prefix packages/gateway",
+    "dev:frontend": "npm run dev --prefix src",
+    "build": "npm run --prefix src build",
+    "preview": "npm run --prefix src preview"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

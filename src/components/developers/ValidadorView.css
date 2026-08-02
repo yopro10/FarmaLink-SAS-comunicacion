@@ -1,0 +1,461 @@
+/* ================================================================
+   VALIDADOR HTML & CSS — FarmaLink Design System
+   ================================================================ */
+
+/* ── Contenedor principal ── */
+.val-container {
+  min-height: 100vh;
+  background: var(--bg-2);
+  padding-bottom: 60px;
+}
+
+/* ── Header ── */
+.val-header {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+  padding: 100px 0 60px;
+  margin-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.val-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.val-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  padding: 6px 18px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.val-header-title {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.val-header-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 auto;
+  max-width: 500px;
+  line-height: 1.65;
+  position: relative;
+  z-index: 1;
+}
+
+.val-header-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255,255,255,0.15);
+  border: 1.5px solid rgba(255,255,255,0.35);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 0.87rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  margin-top: 24px;
+  position: relative;
+  z-index: 1;
+  transition: background 0.22s;
+}
+
+.val-header-back:hover {
+  background: rgba(255,255,255,0.26);
+}
+
+/* ── Grid de dos columnas ── */
+.val-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+/* ── Panel del validador ── */
+.val-panel {
+  background: var(--surface);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.val-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 24px 18px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-2);
+}
+
+.val-panel-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.val-panel-icon--html { background: linear-gradient(135deg, #e34c26 0%, #f06529 100%); }
+.val-panel-icon--css  { background: linear-gradient(135deg, #264de4 0%, #2965f1 100%); }
+
+.val-panel-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.val-panel-desc {
+  font-size: 0.8rem;
+  color: var(--text-3);
+  margin: 2px 0 0;
+}
+
+/* ── Área de código ── */
+.val-body { padding: 20px 24px 24px; }
+
+.val-textarea {
+  width: 100%;
+  min-height: 200px;
+  padding: 14px 16px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--bg-2);
+  color: var(--text);
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  box-sizing: border-box;
+}
+
+.val-textarea:focus {
+  border-color: var(--secondary);
+  background: var(--surface);
+}
+
+/* ── Controles ── */
+.val-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.val-btn-validate {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 20px;
+  border-radius: 9px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.val-btn-validate--html {
+  background: #e34c26;
+  color: #fff;
+}
+
+.val-btn-validate--html:hover { background: #c43c1e; transform: translateY(-1px); }
+
+.val-btn-validate--css {
+  background: #264de4;
+  color: #fff;
+}
+
+.val-btn-validate--css:hover { background: #1c3cbf; transform: translateY(-1px); }
+
+.val-btn-clear {
+  background: none;
+  border: 1.5px solid var(--border);
+  color: var(--text-2);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.val-btn-clear:hover {
+  border-color: var(--text-2);
+  color: var(--text);
+}
+
+/* ── Resultados ── */
+.val-results {
+  margin-top: 16px;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.val-results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.val-results-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.val-badge-ok {
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--r-full);
+  background: #e8f8ef;
+  color: #27ae60;
+}
+
+.val-badge-errors {
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--r-full);
+  background: #fce8e8;
+  color: #c0392b;
+}
+
+.val-results-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.val-result-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 11px 16px;
+  font-size: 0.85rem;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+
+.val-result-item:last-child { border-bottom: none; }
+.val-result-item:hover      { background: var(--bg-2); }
+
+.val-result-icon {
+  flex-shrink: 0;
+  margin-top: 1px;
+  font-size: 1rem;
+}
+
+.val-result-content { flex: 1; }
+
+.val-result-msg {
+  color: var(--text);
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.val-result-line {
+  color: var(--text-3);
+  font-size: 0.78rem;
+  margin-top: 2px;
+  font-family: var(--font-mono);
+}
+
+/* Sin errores */
+.val-result-ok {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px;
+  color: #27ae60;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* ── Sin resultados aún ── */
+.val-results-empty {
+  padding: 20px 16px;
+  text-align: center;
+  color: var(--text-3);
+  font-size: 0.87rem;
+  font-style: italic;
+}
+
+/* ── Sección de referencia de reglas ── */
+.val-rules {
+  background: var(--surface);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  padding: 32px 36px;
+  margin-top: 28px;
+}
+
+.val-rules h2 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 24px;
+}
+
+.val-rules-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.val-rules-col h3 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.val-rules-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.val-rules-col li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.86rem;
+  color: var(--text-2);
+  padding: 8px 12px;
+  background: var(--bg-2);
+  border-radius: var(--r-sm);
+  border-left: 3px solid var(--border);
+  transition: border-color 0.2s;
+}
+
+.val-rules-col li:hover { border-left-color: var(--secondary); }
+
+.val-rule-icon { flex-shrink: 0; }
+
+/* ════════════════════════════════════════════
+   DARK MODE
+   ════════════════════════════════════════════ */
+html.dark-mode .val-container { background: #0d1117; }
+
+html.dark-mode .val-panel {
+  background: #1a2a3a;
+  border-color: rgba(255,255,255,0.08);
+}
+
+html.dark-mode .val-panel-header {
+  background: #152232;
+  border-color: rgba(255,255,255,0.08);
+}
+
+html.dark-mode .val-panel-title  { color: #c8dff0; }
+html.dark-mode .val-panel-desc   { color: #7a9ab8; }
+
+html.dark-mode .val-textarea {
+  background: #111c28;
+  border-color: rgba(255,255,255,0.1);
+  color: #d0e8f0;
+}
+
+html.dark-mode .val-textarea:focus {
+  border-color: var(--secondary);
+  background: #0f1a24;
+}
+
+html.dark-mode .val-btn-clear {
+  border-color: rgba(255,255,255,0.15);
+  color: #8aacca;
+}
+
+html.dark-mode .val-results {
+  border-color: rgba(255,255,255,0.08);
+}
+
+html.dark-mode .val-results-header {
+  background: #111c28;
+  border-color: rgba(255,255,255,0.08);
+}
+
+html.dark-mode .val-results-title { color: #c8dff0; }
+
+html.dark-mode .val-result-item {
+  border-color: rgba(255,255,255,0.06);
+}
+
+html.dark-mode .val-result-item:hover { background: rgba(255,255,255,0.04); }
+html.dark-mode .val-result-msg   { color: #c8dff0; }
+html.dark-mode .val-result-line  { color: #6a8aa8; }
+
+html.dark-mode .val-badge-ok     { background: #0a3020; color: #60c888; }
+html.dark-mode .val-badge-errors { background: #4a1a1a; color: #f08080; }
+
+html.dark-mode .val-rules { background: #1a2a3a; border-color: rgba(255,255,255,0.08); }
+html.dark-mode .val-rules h2     { color: #c8dff0; }
+html.dark-mode .val-rules-col h3 { color: #c8dff0; border-color: rgba(255,255,255,0.1); }
+html.dark-mode .val-rules-col li { background: #111c28; color: #8aacca; border-color: rgba(255,255,255,0.08); }
+html.dark-mode .val-results-empty { color: #6a8aa8; }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .val-grid        { grid-template-columns: 1fr; }
+  .val-rules-grid  { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .val-header-title { font-size: 2.2rem; }
+  .val-body         { padding: 16px 18px 20px; }
+  .val-panel-header { padding: 16px 18px; }
+}

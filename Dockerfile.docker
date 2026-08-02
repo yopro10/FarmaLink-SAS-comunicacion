@@ -1,0 +1,26 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+COPY package.json package-lock.json* ./
+COPY packages/backend/package.json ./packages/backend/
+COPY packages/gateway/package.json ./packages/gateway/
+COPY src/package.json ./src/
+
+RUN npm install
+
+COPY packages ./packages
+COPY src ./src
+
+RUN npm run build:backend
+
+RUN addgroup --system --gid 1001 nodejs && \
+    adduser --system --uid 1001 nodejs
+
+WORKDIR /app/packages/backend
+
+USER nodejs
+
+EXPOSE 4000
+
+CMD ["node", "dist/server.js"]

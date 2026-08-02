@@ -1,0 +1,819 @@
+/* ================================================================
+   QUIÉNES SOMOS — alineado 100% al design system de FarmaLink
+   Usa variables de index.css: --primary, --secondary, --text,
+   --text-2, --text-3, --surface, --bg-2, --border, --shadow-*
+   ================================================================ */
+
+.quienes-somos-container {
+  min-height: 100vh;
+  background: var(--bg-2);
+  padding-bottom: 60px;
+}
+
+/* ── Header ── */
+.quienes-somos-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  padding: 80px 0 60px;
+  margin-bottom: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.quienes-somos-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.quienes-somos-title {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  margin: 0 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.quienes-somos-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.92);
+  text-align: center;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  font-weight: 400;
+}
+
+/* ── Secciones ── */
+.quienes-somos-section {
+  background: var(--surface);
+  border-radius: var(--r-xl);
+  padding: 50px;
+  margin-bottom: 32px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.quienes-somos-section:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ── Encabezado de sección ── */
+.section-header { margin-bottom: 28px; }
+
+.qs-section-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0 0 12px;
+}
+
+.section-divider {
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: 2px;
+  width: 72px;
+}
+
+.section-text {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--text-2);
+  margin: 0 0 24px;
+}
+
+/* ── Subsección ── */
+.subsection { margin-top: 28px; }
+
+.subsection-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border);
+}
+
+/* ── Lista de estrategia ── */
+.strategy-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.strategy-list li {
+  padding: 14px 18px;
+  background: var(--bg-2);
+  border-left: 4px solid var(--primary);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  font-size: 1rem;
+  color: var(--text-2);
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.strategy-list li:hover {
+  background: var(--green-mist);
+  border-left-color: var(--secondary);
+  transform: translateX(4px);
+}
+
+/* ── Grid de valores ── */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.value-card {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  padding: 28px;
+  border-radius: var(--r-lg);
+  color: #fff;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(62,128,14,0.28);
+}
+
+.value-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 12px;
+  color: #fff;
+}
+
+.value-description {
+  font-size: 0.97rem;
+  line-height: 1.65;
+  margin: 0;
+  color: rgba(255,255,255,0.93);
+}
+
+/* ── Estadísticas de mercado ── */
+.market-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.stat-item {
+  background: var(--bg-2);
+  border: 2px solid var(--border);
+  border-top: 4px solid var(--primary);
+  padding: 28px 24px;
+  border-radius: var(--r-lg);
+  text-align: center;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.stat-item:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 0.93rem;
+  line-height: 1.45;
+  color: var(--text-2);
+}
+
+/* ── Segmentos ── */
+.segments-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.segment-card {
+  background: var(--bg-2);
+  padding: 26px;
+  border-radius: var(--r-lg);
+  border: 2px solid var(--border);
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.segment-card:hover {
+  border-color: var(--primary);
+  background: var(--surface);
+  box-shadow: var(--shadow-md);
+}
+
+.segment-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0 0 12px;
+}
+
+.segment-description {
+  font-size: 0.97rem;
+  line-height: 1.65;
+  color: var(--text-2);
+  margin: 0;
+}
+
+/* ── Equipo ── */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.team-member {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-top: 4px solid var(--secondary);
+  padding: 26px 22px;
+  border-radius: var(--r-lg);
+  text-align: center;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--secondary);
+}
+
+.team-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 8px;
+}
+
+.team-role {
+  font-size: 0.88rem;
+  color: var(--secondary);
+  font-weight: 600;
+  display: block;
+}
+
+/* ── Tecnología ── */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.tech-item {
+  background: var(--bg-2);
+  padding: 22px 16px;
+  border-radius: var(--r-lg);
+  text-align: center;
+  border: 2px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+
+.tech-item:hover {
+  border-color: var(--primary);
+  background: var(--surface);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+
+.tech-icon { font-size: 2.2rem; }
+
+.tech-name {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-2);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .quienes-somos-title    { font-size: 2.4rem; }
+  .quienes-somos-subtitle { font-size: 1.05rem; }
+  .quienes-somos-section  { padding: 28px 18px; }
+  .qs-section-title       { font-size: 1.6rem; }
+  .values-grid, .segments-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Sección Scrum Horizontal ── */
+.scrum-horizontal-section {
+  overflow: hidden;
+}
+
+.timeline-horizontal-container {
+  position: relative;
+  margin: 50px 0;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.timeline-scroll-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.timeline-horizontal-track {
+  position: absolute;
+  top: 22px;
+  transform: translateY(-50%);
+  left: 22px;
+  width: calc(100% - 44px);
+  height: 6px;
+  background: var(--border);
+  border-radius: var(--r-full);
+  z-index: 1;
+}
+
+.timeline-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: var(--r-full);
+  transition: width 0.4s var(--ease-spring);
+}
+
+.timeline-nodes-wrapper {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.timeline-node {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  text-align: center;
+  outline: none;
+  transition: transform 0.25s var(--ease-spring);
+}
+
+.timeline-node:hover {
+  transform: translateY(-4px);
+}
+
+.timeline-node:focus-visible .node-marker {
+  outline: 3px solid var(--secondary);
+  outline-offset: 2px;
+}
+
+.node-marker-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+  height: 44px;
+}
+
+.node-marker {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--r-full);
+  background: var(--surface);
+  border: 3px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  color: var(--text-3);
+  position: relative;
+}
+
+.node-check-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--primary);
+}
+
+/* Estados de los Nodos */
+.timeline-node.is-completed .node-marker {
+  background: var(--green-mist);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.timeline-node.is-current .node-marker {
+  background: var(--amber);
+  border-color: var(--amber);
+  color: #fff;
+}
+
+.node-pulse-dot {
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: var(--r-full);
+  display: inline-block;
+}
+
+.timeline-node.is-current .node-marker {
+  box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.5);
+  animation: node-pulse 2s infinite;
+}
+
+@keyframes node-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(245, 158, 11, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+  }
+}
+
+.node-planned-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--border);
+  border-radius: var(--r-full);
+  display: inline-block;
+}
+
+/* Nodo Activo */
+.timeline-node.is-active {
+  transform: scale(1.08);
+}
+
+.timeline-node.is-active .node-marker {
+  border-width: 4px;
+}
+
+.timeline-node.is-completed.is-active .node-marker {
+  border-color: var(--primary);
+  box-shadow: 0 4px 14px var(--green-glow);
+}
+
+.timeline-node.is-current.is-active .node-marker {
+  border-color: var(--amber);
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.5);
+}
+
+.timeline-node.is-active:not(.is-completed):not(.is-current) .node-marker {
+  border-color: var(--secondary);
+  box-shadow: 0 4px 14px var(--blue-glow);
+  color: var(--secondary);
+}
+
+/* Info del Nodo */
+.node-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.node-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-2);
+  transition: color 0.2s;
+}
+
+.timeline-node.is-active .node-title {
+  color: var(--text);
+}
+
+.node-date {
+  font-size: 0.8rem;
+  color: var(--text-3);
+  margin-top: 4px;
+}
+
+/* Tarjeta de Detalle */
+.scrum-detail-card {
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border);
+  padding: 36px;
+  box-shadow: var(--shadow-md);
+  margin-top: 30px;
+  position: relative;
+  animation: scrumFadeIn 0.4s var(--ease-spring);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.scrum-detail-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+@keyframes scrumFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scrum-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  gap: 20px;
+}
+
+.scrum-header-left {
+  flex: 1;
+}
+
+.scrum-header-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.scrum-status-badge {
+  padding: 6px 14px;
+  border-radius: var(--r-sm);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.scrum-status-badge.completed {
+  background: var(--green-mist);
+  color: var(--primary);
+}
+
+.scrum-status-badge.current {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--amber);
+}
+
+.scrum-status-badge.planned {
+  background: var(--surface-3);
+  color: var(--text-3);
+}
+
+.scrum-card-date {
+  font-size: 0.88rem;
+  color: var(--text-2);
+  font-weight: 500;
+}
+
+.scrum-card-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.scrum-header-right {
+  display: flex;
+  align-items: center;
+}
+
+.scrum-progress-container {
+  display: flex;
+  align-items: center;
+}
+
+.scrum-progress-circle {
+  width: 76px;
+  height: 76px;
+  border-radius: var(--r-full);
+  border: 4px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-2);
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+
+.scrum-progress-number {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.scrum-progress-label {
+  font-size: 0.65rem;
+  color: var(--text-3);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* Body / Tareas */
+.scrum-tasks-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 20px;
+}
+
+.scrum-tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.scrum-task-item {
+  display: flex;
+  align-items: center;
+  padding: 18px 24px;
+  border-radius: var(--r-md);
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.scrum-task-item:hover {
+  transform: translateX(4px);
+  border-color: var(--text-3);
+  box-shadow: var(--shadow-sm);
+}
+
+.scrum-task-item.completed {
+  border-left: 4px solid var(--primary);
+}
+
+.scrum-task-item.in-progress {
+  border-left: 4px solid var(--amber);
+}
+
+.scrum-task-item.pending {
+  border-left: 4px solid var(--text-3);
+}
+
+.task-status-indicator {
+  margin-right: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.task-status-dot {
+  width: 26px;
+  height: 26px;
+  border-radius: var(--r-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.task-status-dot.completed {
+  background: var(--primary);
+  color: #fff;
+}
+
+.task-status-dot.in-progress {
+  background: var(--amber);
+  color: #fff;
+}
+
+.task-status-dot.pending {
+  border: 2px dashed var(--text-3);
+  color: var(--text-3);
+}
+
+.task-details {
+  flex: 1;
+}
+
+.task-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 4px;
+}
+
+.task-assignee {
+  font-size: 0.85rem;
+  color: var(--text-2);
+  margin: 0;
+}
+
+.task-badge-container {
+  margin-left: 16px;
+}
+
+.task-status-badge {
+  padding: 4px 10px;
+  border-radius: var(--r-sm);
+  font-size: 0.72rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.task-status-badge.completed {
+  background: var(--green-mist);
+  color: var(--primary);
+}
+
+.task-status-badge.in-progress {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--amber);
+}
+
+.task-status-badge.pending {
+  background: var(--surface-3);
+  color: var(--text-2);
+}
+
+/* Responsividad para la Línea de Tiempo Scrum */
+@media (max-width: 768px) {
+  .timeline-horizontal-container {
+    overflow-x: auto;
+    padding: 20px 10px 30px 10px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  
+  .timeline-horizontal-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .timeline-scroll-wrapper {
+    width: 680px; /* Ancho fijo para habilitar desplazamiento suave */
+  }
+  
+  .timeline-nodes-wrapper {
+    width: 100%;
+  }
+  
+  .timeline-horizontal-track {
+    width: calc(100% - 44px);
+    left: 22px;
+  }
+  
+  .timeline-node {
+    scroll-snap-align: center;
+  }
+  
+  .scrum-detail-card {
+    padding: 24px 20px;
+  }
+  
+  .scrum-card-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  
+  .scrum-header-right {
+    justify-content: flex-start;
+  }
+  
+  .scrum-task-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 18px;
+  }
+  
+  .task-status-indicator {
+    margin-right: 0;
+  }
+  
+  .task-badge-container {
+    margin-left: 0;
+    align-self: flex-start;
+  }
+}

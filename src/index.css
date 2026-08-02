@@ -1,0 +1,232 @@
+:root {
+  /* Brand Colors — primary oscurecido a #3e800e para cumplir WCAG AA (4.89:1 sobre blanco) */
+  --primary: #3e800e;
+  --primary-dark: #2d5e09;
+  --secondary: #0B7DB8;
+  
+  /* Neutral Colors */
+  --green: #3e800e;
+  --green-dark: #2d5e09;
+  --green-glow: rgba(62,128,14,0.40);
+  --green-mist: rgba(62,128,14,0.08);
+  --green-mist2: rgba(62,128,14,0.14);
+  --blue: #0B7DB8;
+  --blue-dark: #085d8a;
+  --blue-glow: rgba(11,125,184,0.40);
+  --blue-mist: rgba(11,125,184,0.08);
+  --teal: #00A896;
+  --amber: #F59E0B;
+  --dark: #0A1628;
+  
+  /* Surfaces */
+  --bg: #ffffff;
+  --bg-2: #F8FAFB;
+  --surface: #ffffff;
+  --surface-2: #F8FAFB;
+  --surface-3: #F0F4F8;
+  
+  /* Text */
+  --text: #0F1C2E;
+  --text-2: #3D5166;
+  --text-3: #7A90A8;
+  
+  /* Borders */
+  --border: #E2EAF1;
+  --border-dark: rgba(255,255,255,0.08);
+  
+  /* Shadows */
+  --shadow-xs: 0 1px 3px rgba(10,22,40,0.06);
+  --shadow-sm: 0 2px 8px rgba(10,22,40,0.08);
+  --shadow-md: 0 8px 24px rgba(10,22,40,0.12);
+  --shadow-lg: 0 20px 60px rgba(10,22,40,0.18);
+  
+  /* Typography */
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  
+  /* Easings */
+  --ease-spring: cubic-bezier(0.34,1.56,0.64,1);
+  --ease-out: cubic-bezier(0.25,0.46,0.45,0.94);
+  
+  /* Border Radius */
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+  --r-full: 999px;
+}
+
+/* ────────────────────────────────
+   RESET
+   ──────────────────────────────── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  /* Scrollbar visible siempre (incluyendo mobile via overlay) */
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--bg-2);
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--surface);
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Overflow-y auto para que aparezca scrollbar en mobile */
+  overflow-y: auto;
+}
+
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* ────────────────────────────────
+   SCROLLBAR – diseño original
+   ──────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--green), var(--blue));
+  border-radius: 3px;
+}
+
+/* ────────────────────────────────
+   CONTAINER
+   ──────────────────────────────── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ────────────────────────────────
+   LINKS
+   ──────────────────────────────── */
+a {
+  font-weight: 500;
+  color: var(--primary);
+  text-decoration: inherit;
+  cursor: pointer;
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+/* ────────────────────────────────
+   BUTTONS
+   ──────────────────────────────── */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.25s;
+  /* Mejor tap target en mobile */
+  min-height: 36px;
+}
+
+button:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ────────────────────────────────
+   ANIMACIONES
+   ──────────────────────────────── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ────────────────────────────────
+   RESPONSIVE
+   ──────────────────────────────── */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 0 14px;
+  }
+}
+
+/* ────────────────────────────────
+   MOBILE TOUCH TARGETS
+   ──────────────────────────────── */
+@media (max-width: 768px) {
+  /* Asegurar tap targets mínimos de 44px */
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+  }
+
+  /* Botones pequeños (badges, pills) quedan excluidos */
+  .badge,
+  .footer-badge,
+  .pd-best-tag,
+  .pd-count-badge,
+  .pd-discount-pill,
+  .pd-strategy,
+  .history-time-btn,
+  .a11y-close {
+    min-height: unset;
+  }
+}
+
+/* ────────────────────────────────
+   SELECTION
+   ──────────────────────────────── */
+::selection {
+  background: rgba(102, 184, 46, 0.2);
+  color: var(--primary-dark);
+}
+
+/* ────────────────────────────────
+   IMAGES
+   ──────────────────────────────── */
+img {
+  max-width: 100%;
+  height: auto;
+}

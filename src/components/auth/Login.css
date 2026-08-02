@@ -1,0 +1,193 @@
+.login-container {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  padding-top: calc(80px + 2rem); /* PUNTO 4: compensar header fijo */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.login-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-card h2 {
+  margin: 0 0 0.5rem;
+  color: #333;
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+.login-subtitle {
+  color: #666;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-error {
+  background: #fee;
+  color: #c33;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #444;
+  font-size: 0.9rem;
+}
+
+.form-group input {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.login-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.875rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.login-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.login-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.login-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #666;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: #667eea;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.link-btn:hover {
+  text-decoration: underline;
+}
+
+.demo-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.demo-btn {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.demo-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.demo-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.demo-btn-user {
+  background: #10b981;
+  color: white;
+}
+
+.demo-btn-admin {
+  background: #6366f1;
+  color: white;
+}
+
+.login-divider {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+.login-divider::before,
+.login-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #ddd;
+}
+
+.login-divider span {
+  padding: 0 1rem;
+  color: #999;
+  font-size: 0.85rem;
+}
+
+/* ── PUNTO 4: validación de formulario ─────────────────────── */
+.form-group input.input-error {
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+  background: #fff5f5;
+}
+
+.field-error {
+  display: block;
+  font-size: 12px;
+  color: #dc2626;
+  font-weight: 500;
+  margin-top: 3px;
+  animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25%       { transform: translateX(-4px); }
+  75%       { transform: translateX(4px); }
+}
+
+.login-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

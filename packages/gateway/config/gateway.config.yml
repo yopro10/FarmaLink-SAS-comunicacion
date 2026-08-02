@@ -1,0 +1,24 @@
+http:
+  port: 8080
+admin:
+  port: 9876
+  host: localhost
+apiEndpoints:
+  api:
+    host: '*'
+    paths:
+      - '/api/*'
+serviceEndpoints:
+  backend:
+    url: ${BACKEND_URL}
+policies:
+  - proxy
+pipelines:
+  apiPipeline:
+    apiEndpoints:
+      - api
+    policies:
+      - proxy:
+          - action:
+              serviceEndpoint: backend
+              changeOrigin: true

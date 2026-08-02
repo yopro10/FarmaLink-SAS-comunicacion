@@ -1,0 +1,15 @@
+/* Import component styles */
+@import './components/layout/Header.css';
+@import './components/layout/Footer.css';
+@import './components/home/Hero.css';
+@import './components/home/Features.css';
+@import './components/dashboard/Dashboard.css';
+@import './components/search/SearchSection.css';
+@import './components/common/LoadingError.css';
+
+/* Legacy support - imports from existing styles */
+@import './components/developers/DevelopersView.css';
+@import './components/developers/ValidadorView.css';
+
+/* Dark mode global — debe ir al final para mayor especificidad */
+@import './darkmode.css';

@@ -1,0 +1,482 @@
+/* ── FiltrosBusqueda.css ────────────────────────────────────────────────── */
+
+.filtros-wrapper {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ── Botón toggle ───────────────────────────────────────────────────────── */
+.filtros-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--surface, #fff);
+  border: 1.5px solid var(--border, #E2EAF1);
+  border-radius: 50px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--text-2, #3D5166);
+  cursor: pointer;
+  transition: all 0.2s var(--ease-out, ease);
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow-xs);
+}
+
+.filtros-toggle:hover {
+  border-color: var(--primary, #66B82E);
+  color: var(--primary, #66B82E);
+  box-shadow: 0 0 0 3px rgba(102,184,46,0.1);
+}
+
+.filtros-toggle.activo {
+  border-color: var(--primary, #66B82E);
+  background: var(--green-mist, rgba(102,184,46,0.08));
+  color: var(--primary-dark, #4a8a1e);
+}
+
+.filtros-badge {
+  background: var(--primary, #66B82E);
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 0.68rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+/* ── Panel de filtros ───────────────────────────────────────────────────── */
+.filtros-panel {
+  background: var(--surface, #fff);
+  border: 1px solid var(--border, #E2EAF1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-md);
+  animation: slideDown 0.2s var(--ease-out, ease);
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.filtros-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.filtro-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.filtro-grupo label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-3, #7A90A8);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.filtro-grupo select,
+.filtro-grupo input[type="number"] {
+  padding: 0.55rem 0.85rem;
+  border: 1.5px solid var(--border, #E2EAF1);
+  border-radius: 10px;
+  font-size: 0.875rem;
+  color: var(--text, #0F1C2E);
+  background: var(--bg-2, #F8FAFB);
+  transition: all 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.filtro-grupo select:focus,
+.filtro-grupo input[type="number"]:focus {
+  outline: none;
+  border-color: var(--primary, #66B82E);
+  background: #fff;
+  box-shadow: 0 0 0 3px var(--green-mist, rgba(102,184,46,0.12));
+}
+
+.filtros-fila {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 0;
+}
+
+/* ── Acciones ───────────────────────────────────────────────────────────── */
+.filtros-acciones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border, #E2EAF1);
+}
+
+.btn-limpiar-filtros {
+  padding: 0.5rem 1.1rem;
+  background: none;
+  border: 1.5px solid var(--border, #E2EAF1);
+  border-radius: 10px;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--text-2, #3D5166);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.btn-limpiar-filtros:hover {
+  border-color: #ef4444;
+  color: #ef4444;
+  background: #fef2f2;
+}
+
+.btn-aplicar-filtros {
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(135deg, var(--primary, #66B82E), var(--secondary, #0B7DB8));
+  border: none;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  box-shadow: 0 4px 12px rgba(102,184,46,0.3);
+}
+
+.btn-aplicar-filtros:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(102,184,46,0.4);
+}
+
+.btn-aplicar-filtros:active {
+  transform: translateY(0);
+}
+
+/* ── Resultados ─────────────────────────────────────────────────────────── */
+.busqueda-resultados {
+  width: 100%;
+}
+
+.busqueda-resultados-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.825rem;
+  color: var(--text-3, #7A90A8);
+  padding: 0 0.25rem;
+}
+
+.busqueda-resultados-header strong {
+  color: var(--text, #0F1C2E);
+  font-weight: 700;
+}
+
+/* ── Tarjeta de resultado ───────────────────────────────────────────────── */
+.resultado-card {
+  background: var(--surface, #fff);
+  border: 1.5px solid var(--border, #E2EAF1);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.6rem;
+  cursor: pointer;
+  transition: all 0.18s var(--ease-out, ease);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: var(--shadow-xs);
+}
+
+.resultado-card:hover {
+  border-color: var(--primary, #66B82E);
+  box-shadow: 0 6px 20px rgba(102,184,46,0.12);
+  transform: translateY(-2px);
+}
+
+.resultado-info {
+  flex: 1;
+  text-align: left;
+}
+
+.resultado-nombre {
+  font-weight: 700;
+  color: var(--text, #0F1C2E);
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+}
+
+.resultado-meta {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  font-size: 0.775rem;
+  color: var(--text-3, #7A90A8);
+  align-items: center;
+}
+
+.resultado-categoria {
+  background: var(--green-mist, rgba(102,184,46,0.1));
+  color: var(--primary-dark, #4a8a1e);
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.72rem;
+}
+
+.resultado-farmacias {
+  background: var(--blue-mist, rgba(11,125,184,0.1));
+  color: var(--secondary, #0B7DB8);
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.72rem;
+}
+
+/* ── Precio ─────────────────────────────────────────────────────────────── */
+.resultado-precio {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.resultado-precio-valor {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary-dark, #4a8a1e);
+  letter-spacing: -0.02em;
+}
+
+.resultado-precio-label {
+  font-size: 0.68rem;
+  color: var(--text-3, #7A90A8);
+  margin-top: 1px;
+  font-weight: 500;
+}
+
+.resultado-sin-precio {
+  font-size: 0.78rem;
+  color: var(--border, #E2EAF1);
+  font-style: italic;
+}
+
+/* ── Paginación ─────────────────────────────────────────────────────────── */
+.busqueda-paginacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1.5rem;
+}
+
+.busqueda-paginacion button {
+  padding: 0.4rem 0.85rem;
+  border: 1.5px solid var(--border, #E2EAF1);
+  border-radius: 8px;
+  background: white;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  color: var(--text-2, #3D5166);
+  font-family: inherit;
+}
+
+.busqueda-paginacion button:hover:not(:disabled) {
+  border-color: var(--primary, #66B82E);
+  color: var(--primary, #66B82E);
+}
+
+.busqueda-paginacion button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.busqueda-paginacion button.activa {
+  background: linear-gradient(135deg, var(--primary, #66B82E), var(--secondary, #0B7DB8));
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 2px 8px rgba(102,184,46,0.3);
+}
+
+/* ── Estados vacío / cargando ───────────────────────────────────────────── */
+.busqueda-cargando {
+  text-align: center;
+  padding: 2.5rem;
+  color: var(--text-3, #7A90A8);
+  font-size: 0.9rem;
+}
+
+.busqueda-vacio {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-3, #7A90A8);
+  background: var(--bg-2, #F8FAFB);
+  border-radius: 14px;
+  border: 1.5px dashed var(--border, #E2EAF1);
+}
+
+.busqueda-vacio p {
+  margin: 0.4rem 0;
+  font-size: 0.9rem;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .filtros-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .resultado-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .resultado-precio {
+    text-align: left;
+    width: 100%;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border, #E2EAF1);
+  }
+}
+/* ══════════════════════════════════════════════
+   PUNTO 4 — Estilos de validación de formularios
+   ══════════════════════════════════════════════ */
+
+.filtro-input-error {
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12) !important;
+  background: #fff5f5;
+}
+
+.filtro-error-msg {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: #dc2626;
+  font-weight: 500;
+  animation: filtro-shake 0.3s ease;
+}
+
+.filtro-error-rango {
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #b91c1c;
+  margin-bottom: 12px;
+  animation: filtro-shake 0.3s ease;
+}
+
+@keyframes filtro-shake {
+  0%, 100% { transform: translateX(0); }
+  25%       { transform: translateX(-4px); }
+  75%       { transform: translateX(4px); }
+}
+
+.btn-aplicar-filtros:disabled {
+  background: #9ca3af !important;
+  cursor: not-allowed !important;
+  opacity: 0.7;
+}
+
+/* ══════════════════════════════════════════════
+   PUNTO 4 — Tooltip de prevención de errores
+   ══════════════════════════════════════════════ */
+
+.filtro-input-wrap {
+  position: relative;
+}
+
+.filtro-tooltip {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  background: #1e293b;
+  color: #fff;
+  font-size: 12px;
+  padding: 7px 12px 7px 10px;
+  border-radius: 8px;
+  white-space: nowrap;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  animation: tooltip-pop 0.15s ease;
+  pointer-events: none;
+}
+
+.filtro-tooltip::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 14px;
+  width: 10px;
+  height: 10px;
+  background: #1e293b;
+  transform: rotate(45deg);
+  border-radius: 2px;
+}
+
+.filtro-tooltip-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background: #f59e0b;
+  color: #1e293b;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+@keyframes tooltip-pop {
+  from { opacity: 0; transform: translateY(-3px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .filtro-tooltip { white-space: normal; max-width: 200px; }
+}
+
+/* ── PUNTO 4: toggle compacto de filtros ──────────────────────── */
+.filtros-toggle-link-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+.filtros-toggle-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: var(--primary, #66B82E);
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.15s;
+}
+.filtros-toggle-link:hover {
+  background: var(--green-mist, rgba(102,184,46,0.08));
+}

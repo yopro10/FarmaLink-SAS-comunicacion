@@ -1,0 +1,471 @@
+/* ================================
+   HERO SECTION
+   ================================ */
+.hero {
+  padding: 8rem 0 5rem;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-eyebrow {
+  color: var(--secondary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  /* Sin ::before aquí - lo hacemos con un span para no contaminar otros elementos */
+}
+
+.hero-eyebrow-line {
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background: var(--secondary);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+.hero-title span {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-2);
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero-badges .badge {
+  background: var(--bg-2);
+  padding: 0.45rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  color: var(--text-2);
+  font-weight: 500;
+  border: 1px solid var(--border);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: all 0.2s;
+}
+
+.hero-badges .badge:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--green-mist);
+}
+
+/* ── Hero Actions – Botones mejorados ── */
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Botón Primario – Buscar Medicamento */
+.btn-primary,
+.hero-actions .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  letter-spacing: 0.01em;
+  /* Estilo llamativo verde */
+  background: linear-gradient(135deg, var(--primary) 0%, #4a9e22 100%);
+  color: white;
+  border: none;
+  box-shadow:
+    0 4px 15px rgba(102, 184, 46, 0.35),
+    0 1px 3px rgba(0,0,0,0.1),
+    inset 0 1px 0 rgba(255,255,255,0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow:
+    0 8px 25px rgba(102, 184, 46, 0.45),
+    0 3px 10px rgba(0,0,0,0.15);
+  color: white;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+/* Botón Secundario – Ver Dashboard */
+.btn-secondary,
+.hero-actions .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  /* Estilo llamativo azul */
+  background: linear-gradient(135deg, var(--secondary) 0%, #085d8a 100%);
+  color: white;
+  border: none;
+  box-shadow:
+    0 4px 15px rgba(11, 125, 184, 0.35),
+    0 1px 3px rgba(0,0,0,0.1),
+    inset 0 1px 0 rgba(255,255,255,0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow:
+    0 8px 25px rgba(11, 125, 184, 0.45),
+    0 3px 10px rgba(0,0,0,0.15);
+  color: white;
+}
+
+.btn-secondary:hover::before {
+  left: 100%;
+}
+
+.btn-secondary:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+/* Pulso de atención inicial */
+@keyframes btn-attention {
+  0%, 100% { box-shadow: 0 4px 15px rgba(102, 184, 46, 0.35); }
+  50% { box-shadow: 0 4px 30px rgba(102, 184, 46, 0.6), 0 0 0 6px rgba(102, 184, 46, 0.08); }
+}
+
+.btn-primary {
+  animation: btn-attention 3s ease-in-out 1s 2;
+}
+
+/* ── Hero Visual (card) ── */
+.hero-visual {
+  position: relative;
+}
+
+.hero-card-main {
+  background: white;
+  border-radius: 20px;
+  padding: 1.75rem;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.1),
+    0 4px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--border);
+}
+
+.hero-card-label {
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.hero-search-demo {
+  background: var(--bg-2);
+  padding: 0.875rem 1rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-2);
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border);
+}
+
+.price-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 10px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+}
+
+.price-row.best {
+  background: linear-gradient(135deg, rgba(102, 184, 46, 0.08), rgba(74, 138, 30, 0.08));
+  border: 1.5px solid rgba(102, 184, 46, 0.25);
+}
+
+.price-row-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.price-row-name {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.price-row-dist {
+  font-size: 0.8rem;
+  color: var(--text-2);
+}
+
+.price-row-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.price-val {
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+.price-badge-best {
+  background: var(--primary);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+/* Floating Card */
+.hero-card-floating {
+  position: absolute;
+  right: -1rem;
+  bottom: 2rem;
+  background: white;
+  padding: 0.875rem 1.125rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  animation: float 3s ease-in-out infinite;
+  border: 1px solid var(--border);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.float-text strong {
+  color: var(--primary);
+  font-size: 0.95rem;
+}
+
+.float-text span {
+  font-size: 0.8rem;
+  color: var(--text-2);
+}
+
+/* Animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Badge images */
+.badge-img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.float-icon-img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+/* ================================
+   RESPONSIVE
+   ================================ */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero {
+    padding-top: 6rem;
+    min-height: auto;
+  }
+
+  .hero-visual {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 5.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-title {
+    font-size: 2.25rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+
+  /* Botones grandes y fáciles de presionar en mobile */
+  .btn-primary,
+  .btn-secondary,
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary {
+    width: 100%;
+    padding: 1.125rem 1.5rem;
+    font-size: 1.05rem;
+    border-radius: 14px;
+    min-height: 56px;
+    text-align: center;
+  }
+
+  .hero-badges {
+    justify-content: flex-start;
+  }
+
+  .hero-card-floating {
+    right: 0.5rem;
+    bottom: -0.5rem;
+    transform: scale(0.9);
+    animation: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 5rem 0 2.5rem;
+  }
+
+  .hero-title {
+    font-size: 1.85rem;
+  }
+
+  .hero-card-floating {
+    display: none;
+  }
+}
+
+/* Dark mode */
+html.dark-mode .hero-card-main {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+html.dark-mode .hero-card-floating {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+html.dark-mode .price-row {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+html.dark-mode .hero-search-demo {
+  background: #0f172a;
+  border-color: #334155;
+  color: #94a3b8;
+}
+
+html.dark-mode .price-row-name {
+  color: #f1f5f9;
+}
+
+html.dark-mode .price-val {
+  color: #f1f5f9;
+}

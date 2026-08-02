@@ -1,0 +1,307 @@
+/* ── SearchAutocomplete.css ─────────────────────────────────────────────── */
+
+.search-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  font-family: inherit;
+}
+
+.search-input-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search-input-container {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  font-size: 1rem;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 2.4rem;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.search-input:focus {
+  border-color: #646cff;
+  box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.15);
+}
+
+/* Spinner de carga */
+.search-spinner {
+  position: absolute;
+  right: 12px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ddd;
+  border-top-color: #646cff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Botón limpiar */
+.search-clear {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 0.85rem;
+  color: #999;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+}
+
+.search-clear:hover {
+  color: #333;
+}
+
+/* Hint mínimo caracteres */
+.search-hint {
+  font-size: 0.8rem;
+  color: #999;
+  margin: 0.3rem 0 0 0.5rem;
+  text-align: left;
+}
+
+/* ── Dropdown ────────────────────────────────────────────────────────────── */
+.search-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  z-index: 100;
+  overflow: hidden;
+}
+
+.search-dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: #f5f5f5;
+  font-size: 0.75rem;
+  color: #777;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.search-estrategia-badge {
+  background: #646cff20;
+  color: #646cff;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.search-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.search-item {
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.1s;
+  text-align: left;
+}
+
+.search-item:last-child {
+  border-bottom: none;
+}
+
+.search-item:hover,
+.search-item--active {
+  background: #646cff10;
+}
+
+.search-item-name {
+  font-weight: 600;
+  color: #213547;
+  font-size: 0.95rem;
+}
+
+.search-item-meta {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 2px;
+  font-size: 0.78rem;
+  color: #888;
+}
+
+.search-item-category {
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+/* ── Tarjeta de medicamento seleccionado ────────────────────────────────── */
+.search-selected {
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  background: #f0f4ff;
+  border: 1px solid #646cff40;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.search-selected h3 {
+  margin: 0 0 0.5rem;
+  color: #213547;
+  font-size: 1rem;
+}
+
+.search-selected p {
+  margin: 0.25rem 0;
+  font-size: 0.88rem;
+  color: #444;
+}
+
+.search-selected-desc {
+  font-style: italic;
+  color: #666 !important;
+  margin-top: 0.4rem !important;
+}
+
+.btn-comparar {
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: #646cff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-comparar:hover {
+  background: #535bf2;
+}
+
+/* Sin coincidencias */
+.search-no-results {
+  padding: 18px 20px;
+  font-size: 0.88rem;
+  color: #64748b;
+  text-align: center;
+  background: #f8fafc;
+  border-radius: 8px;
+  margin: 8px;
+}
+.search-no-results strong {
+  color: #374151;
+}
+
+/* ══════════════════════════════════════════════
+   PUNTO 4 — Adiciones de usabilidad
+   ══════════════════════════════════════════════ */
+
+/* Fila input + botón */
+.search-input-row {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+/* Ícono de lupa siempre visible */
+.search-icon {
+  position: absolute;
+  left: 14px;
+  font-size: 16px;
+  pointer-events: none;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* Espacio para el ícono izquierdo */
+.search-input {
+  padding-left: 44px !important;
+}
+
+/* Botón Buscar */
+.search-submit-btn {
+  padding: 0 22px;
+  background: #0B7DB8;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.1s;
+  min-width: 96px;
+}
+.search-submit-btn:hover:not(:disabled) { background: #0a6fa3; }
+.search-submit-btn:active:not(:disabled) { transform: scale(0.97); }
+.search-submit-btn:disabled { background: #93c5fd; cursor: not-allowed; }
+
+/* Error de red */
+.search-error-state {
+  padding: 20px 16px;
+  text-align: center;
+  color: #dc2626;
+  font-size: 13px;
+}
+
+/* Sin resultados — tip extra */
+.search-no-results {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.search-no-results-tip {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+/* Hint de teclado */
+.search-keyboard-hint {
+  padding: 8px 16px;
+  border-top: 1px solid #f3f4f6;
+  font-size: 11px;
+  color: #9ca3af;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .search-input-row { flex-direction: column; }
+  .search-submit-btn { width: 100%; padding: 12px; border-radius: 10px; }
+}

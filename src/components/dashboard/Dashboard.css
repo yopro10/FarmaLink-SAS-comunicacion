@@ -1,0 +1,304 @@
+.dashboard-section {
+  padding-top: 80px;
+}
+
+.dashboard-header {
+  padding: 2rem 0;
+  background: var(--bg-2);
+  margin-bottom: 2rem;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem;
+  color: var(--text);
+}
+
+.dashboard-subtitle {
+  color: var(--text-2);
+  margin: 0;
+}
+
+/* Stats Strip */
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.stat-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-val {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.stat-lbl {
+  color: var(--text-2);
+  font-weight: 500;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  background: var(--bg-2);
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 0.875rem 1rem;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.tab-btn.active {
+  background: var(--surface);
+  color: var(--primary);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tab-count {
+  background: var(--bg-2);
+  padding: 0.125rem 0.5rem;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  margin-left: 0.5rem;
+}
+
+.tab-btn.active .tab-count {
+  background: var(--primary);
+  color: white;
+}
+
+/* Tab Panel */
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+/* Cards Grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+/* Farmacia Card */
+.farmacia-card {
+  background: var(--surface);
+  padding: 1.25rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.farmacia-num {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--bg-2);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: var(--text-2);
+}
+
+.farmacia-name {
+  font-weight: 700;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+  padding-right: 2rem;
+}
+
+.farmacia-address {
+  color: var(--text-2);
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.farmacia-phone {
+  color: var(--text-2);
+  font-size: 0.875rem;
+}
+
+/* Medicamento Card */
+.med-card {
+  background: var(--surface);
+  padding: 1.25rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.med-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.med-name {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.med-status {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.med-status.active {
+  background: #22c55e;
+}
+
+.med-status.inactive {
+  background: #ef4444;
+}
+
+.med-lab {
+  color: var(--text-2);
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+.med-tags {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.med-tag {
+  background: var(--bg-2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  color: var(--text-2);
+}
+
+/* Precios Table */
+.precios-table {
+  background: var(--surface);
+  border-radius: 10px;
+  overflow-x: auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.precios-table-header {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 1fr;
+  min-width: 600px;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: var(--bg-2);
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.precio-row {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 1fr;
+  min-width: 600px;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+}
+
+.precio-row:last-child {
+  border-bottom: none;
+}
+
+.precio-med-name {
+  font-weight: 600;
+}
+
+.precio-farmacia {
+  color: var(--text-2);
+}
+
+.precio-val-cell {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.precio-fecha {
+  color: var(--text-2);
+  font-size: 0.875rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-title {
+    font-size: 1.5rem;
+  }
+
+  .stats-strip {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .tabs {
+    flex-direction: column;
+  }
+
+  .tab-btn {
+    text-align: left;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .precios-table-header,
+  .precio-row {
+    font-size: 0.875rem;
+  }
+}
+
+/* Imágenes en stats del dashboard */
+.stat-icon-img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Imágenes en tabs */
+.tab-icon-img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-right: 6px;
+}

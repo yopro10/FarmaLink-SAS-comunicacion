@@ -1,0 +1,68 @@
+.social-links-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.social-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+  color: var(--primary);
+  border-color: var(--primary-light);
+  box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.2);
+}
+
+/* En el hero section podemos querer estilos ligeramente diferentes */
+.hero .social-links-container {
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+@media (min-width: 992px) {
+  .hero .social-links-container {
+    justify-content: flex-start;
+  }
+}
+
+.hero .social-link {
+  background: white;
+  border-color: rgba(0,0,0,0.1);
+}
+
+.dark-mode .hero .social-link {
+  background: var(--surface);
+  border-color: var(--border-color);
+}
+
+.footer .social-links-container {
+  margin-top: 1.5rem;
+}
+
+.footer .social-link {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: none;
+}
+
+.footer .social-link:hover {
+  background: var(--primary-light);
+  color: #fff;
+}
