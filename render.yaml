@@ -39,10 +39,8 @@ services:
         value: AZaeieR45nFNjMFG0bEE63fAUNcBXvLFA3T2kK9Aq+c=
 
   # Frontend
-  - type: web
+  - type: static
     name: farmalink-frontend
-    env: static
-    plan: free
     rootDir: src
     buildCommand: npm install && npm run build
     staticPublishPath: dist
