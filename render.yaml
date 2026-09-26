@@ -3,6 +3,7 @@ services:
   - type: web
     name: farmalink-backend
     env: node
+    plan: free
     region: oregon
     rootDir: packages/backend
     buildCommand: npm install && npm run build
@@ -20,6 +21,7 @@ services:
   - type: web
     name: farmalink-gateway
     env: node
+    plan: free
     region: oregon
     rootDir: packages/gateway
     buildCommand: npm install
@@ -40,6 +42,7 @@ services:
   - type: web
     name: farmalink-frontend
     env: static
+    plan: free
     rootDir: src
     buildCommand: npm install && npm run build
     staticPublishPath: dist
